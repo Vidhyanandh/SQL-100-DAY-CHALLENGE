@@ -61,3 +61,26 @@ INSERT INTO student_batch (StudentID, CourseID, EnrollmentYear) VALUES
 (1, 107, 2020),
 (4, 110, 2020),
 (4, 111, 2020);
+
+
+-- STEP:1 FINDING THE TOTAL NUMBER OF DISTINCT COURSES 
+
+SELECT COUNT(DISTINCT CourseID) as course_count 
+FROM student_batch
+WHERE EnrollmentYear='2019';
+
+
+-- STEP:2  FINDING THE NO OF COURSES ENROLLED BY EACH STUDENT IN THE YEAR 2019
+
+SELECT StudentID,COUNT( DISTINCT CourseID ) AS course_count FROM student_batch WHERE EnrollmentYear='2019'
+GROUP BY StudentID;
+
+-- STEP:3 COMBINE THOSE STEP1 & STEP2
+
+SELECT StudentID,COUNT( DISTINCT CourseID ) AS course_count 
+FROM student_batch 
+WHERE EnrollmentYear='2019'
+GROUP BY StudentID
+HAVING COUNT( DISTINCT CourseID ) = (SELECT COUNT(DISTINCT CourseID) as course_count 
+FROM student_batch
+WHERE EnrollmentYear='2019');
