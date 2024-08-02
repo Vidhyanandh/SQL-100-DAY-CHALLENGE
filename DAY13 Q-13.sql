@@ -31,7 +31,12 @@ INSERT INTO user_activities (user_id, activity, activity_time) VALUES
 
 
 -- write sql query to get each employees total productivity hour 
--- productivity hour = logintime-logouttime
+-- productivity hour = logouttime-logintime
+
+
+
+
+
 -- METHOD-1 
 
 SELECT user_id, 
