@@ -29,6 +29,9 @@ INSERT INTO user_activities (user_id, activity, activity_time) VALUES
 (5, 'Login', '2024-01-01 13:30:00'),
 (5, 'Logout', '2024-01-01 16:30:00');
 
+
+-- write sql query to get each employees total productivity hour 
+-- productivity hour = logintime-logouttime
 -- METHOD-1 
 
 SELECT user_id, 
