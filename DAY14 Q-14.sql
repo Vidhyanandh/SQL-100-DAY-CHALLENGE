@@ -58,6 +58,10 @@ INSERT INTO Users (user_id, name, mail) VALUES
 (80, 'Shaun', 'shaun@ymail.com');
 
 
+
+
+-- Write SQL Query to find users whose email addresses contain only lowercase letters before the @ symbol
+
 SELECT *
 FROM Users
 WHERE mail REGEXP '^[a-z]+@[a-zA-Z0-9]+\\.[a-z]{2,}$';
